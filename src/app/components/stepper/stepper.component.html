@@ -1,0 +1,5 @@
+<div class="stepper-container">
+  <button (click)="moveToStep('1')">Step 1</button>
+  <button [disabled]="disabledStep2" (click)="moveToStep('2')">Step 2</button>
+  <button [disabled]="disabledStep3" (click)="moveToStep('3')">Step 3</button>
+</div>

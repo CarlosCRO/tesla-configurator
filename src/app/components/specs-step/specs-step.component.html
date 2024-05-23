@@ -1,0 +1,43 @@
+<div>
+  <span class="step-title">Step 2: Select your config and options</span>
+  <form [formGroup]="specsForm">
+    @if (carConfigs.length) {
+    <div>
+        <label for="configSelect">Configuration:</label>
+        <select id="configSelect" formControlName="configSelect" [(ngModel)]="selectedConfigId" (change)="configChange()">
+          <option value="">Choose...</option>
+          @for(spec of carConfigs; track spec){
+            <option value="{{spec.id}}">{{spec.description}}</option>
+          }
+      </select>
+    </div>
+  }
+  @if(selectedConfig){
+    <div>
+      <span>Range: {{selectedConfig.range}} - Max speed: {{selectedConfig.speed}} - Cost: {{selectedConfig.price | currency: 'USD'}}</span>
+    </div>
+  }
+  <div class="yoke-tow-container">
+    @if(hasTow){
+      <div>
+        <span class="checkbox-description">Tow hitch?</span>
+        <input id="includeTow" formControlName="includeTow" type="checkbox" [(ngModel)]="selectedTow" (change)="checkboxChange('tow')">
+      </div>
+    }
+    @if(hasYoke){
+      <div>
+        <span class="checkbox-description">Yoke steering wheel?</span>
+        <input id="includeYoke" formControlName="includeYoke" type="checkbox" [(ngModel)]="selectedYoke" (change)="checkboxChange('yoke')">
+      </div>
+    }
+  </div>
+
+  </form>
+  @if (carImage) {
+    <div class="imageContainer">
+      <img class="img" [src]="carImage" loading="lazy" />
+    </div>
+  }
+
+</div>
+

@@ -1,0 +1,27 @@
+:host {
+  display: block;
+}
+
+.imageContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.step-title {
+  margin-left: 12px;
+  font-size: xx-large;
+  font-weight: 600;
+}
+
+.yoke-tow-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.checkbox-description {
+  margin-right: 4px;
+}
+
+input {
+  top: 5px;
+}

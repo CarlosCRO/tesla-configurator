@@ -1,0 +1,45 @@
+:host {
+  display: block;
+}
+
+.summary-row{
+  display: flex;
+  gap: 200px;
+}
+
+.summary-spacing {
+  margin-bottom: 12px;
+}
+.summary-container {
+  padding: 30px;
+}
+.summary-description {
+  width: 300px;
+}
+
+.divider {
+  border: none;
+  height: 1px;
+  background-color: white; /* Set the background color to white */
+  margin: 20px 0; /* Adjust margin as needed */
+}
+
+.imageContainer {
+  display: flex;
+  justify-content: center;
+}
+
+.step-title {
+  margin-left: 12px;
+  font-size: xx-large;
+  font-weight: 600;
+}
+.model-description {
+ margin-left: 12px;
+ font-size: x-large;
+ font-weight: 600;
+}
+.title-container {
+  display: flex;
+  flex-direction: column;
+}

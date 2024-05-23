@@ -1,0 +1,44 @@
+<div class="title-container">
+  <span class="step-title">Step 3: Summary</span>
+  <span class="model-description">Your Tesla {{ summaryModel?.description }}</span>
+</div>
+
+<div class="summary-container">
+  <div class="summary-row">
+    <span class="summary-description">{{summarySpecs?.description}}</span>
+    <span>{{summarySpecs?.price | currency: 'USD'}}</span>
+  </div>
+  <div class="summary-spacing">
+    <span>Range: {{ summarySpecs?.range }} - Max speed: {{ summarySpecs?.speed }}</span>
+  </div>
+  <div class="summary-row summary-spacing">
+    <span class="summary-description">{{summaryColor?.description}} Color</span>
+    <span>{{summaryColor?.price | currency: 'USD'}}</span>
+  </div>
+
+  @if(hasTow){
+    <div class="summary-row summary-spacing">
+      <span class="summary-description">Tow Hitch Package</span>
+      <span>{{towYokeCost | currency: 'USD'}}</span>
+    </div>
+  }
+
+  @if(hasYoke){
+    <div class="summary-row summary-spacing">
+      <span class="summary-description">Yoke Wheel Package</span>
+      <span>{{towYokeCost | currency: 'USD'}}</span>
+    </div>
+  }
+  <hr class="divider">
+  <div class="summary-row summary-spacing">
+    <span class="summary-description">TOTAL COST</span>
+    <span>{{ total | currency: 'USD'}}</span>
+  </div>
+  <hr class="divider">
+  @if (carImage) {
+    <div class="imageContainer">
+      <img class="img" [src]="carImage" loading="lazy" />
+    </div>
+  }
+</div>
+

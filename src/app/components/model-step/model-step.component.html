@@ -1,0 +1,32 @@
+<div>
+  <span class="step-title">Step 1: Choose your model and color</span>
+  <form [formGroup]="modelForm">
+    @if (allModels.length) {
+    <div>
+        <label for="modelSelect">Model:</label>
+        <select id="modelSelect" formControlName="modelSelect" [(ngModel)]="selectedModel" (change)="carModelChange()">
+          <option value="">Choose...</option>
+          @for(model of allModels; track model){
+            <option value="{{model.code}}">{{model.description}}</option>
+          }
+      </select>
+    </div>
+  }
+  @if(selectedCarColors.length){
+    <div>
+      <label for="colorSelect">Color:</label>
+      <select id="colorSelect" formControlName="colorSelect" [(ngModel)]="selectedColor" (change)="carColorChange()">
+        @for(color of selectedCarColors; track color){
+          <option value="{{color.code}}">{{color.description}}</option>
+        }
+      </select>
+    </div>
+  }
+  </form>
+  @if (carImage) {
+    <div class="imageContainer">
+      <img class="img" [src]="carImage" loading="lazy" />
+    </div>
+  }
+</div>
+
